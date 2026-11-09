@@ -3349,7 +3349,7 @@ pub fn intInfo(ip: *InternPool, ty: Index, target: std.Target) std.lang.Type.Int
             },
             .struct_type => |struct_index| {
                 const struct_info = ip.getStruct(struct_index);
-                assert(struct_info.layout == .@"packed");
+                assert(struct_info.layout == .@"bitpack");
                 index = struct_info.backing_int_ty;
             },
             // TODO revisit this when error sets support custom int types (comment taken from zig codebase)
